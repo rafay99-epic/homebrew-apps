@@ -10,7 +10,7 @@ cask "vitals" do
 
   # Vitals updates itself from GitHub Releases, so Homebrew shouldn't manage upgrades.
   auto_updates true
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Vitals.app"
 
