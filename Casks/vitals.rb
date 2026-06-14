@@ -2,14 +2,12 @@ cask "vitals" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/rafay99-epic/Vitals/releases/latest/download/Vitals.dmg",
-      verified: "github.com/rafay99-epic/Vitals/"
+  url "https://github.com/rafay99-epic/Vitals/releases/latest/download/Vitals.dmg"
   name "Vitals"
   desc "Native macOS hardware monitor and app manager"
   homepage "https://github.com/rafay99-epic/Vitals"
 
-  # Vitals updates itself from GitHub Releases, so Homebrew shouldn't manage upgrades.
-  auto_updates true
+  # `version :latest` always tracks the newest release; Vitals also self-updates.
   depends_on macos: :sequoia
 
   app "Vitals.app"
