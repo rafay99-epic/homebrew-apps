@@ -1,13 +1,22 @@
 cask "crisp" do
-  version :latest
-  sha256 :no_check
+  version "0.2"
+  sha256 "0e49971720640949f05ae5f5337f41409ebd3b28d8633e5937f0e952672d60c6"
 
-  url "https://github.com/rafay99-epic/Crisp/releases/latest/download/Crisp.dmg"
+  url "https://github.com/rafay99-epic/Crisp/releases/download/v#{version}/Crisp.dmg",
+      verified: "github.com/rafay99-epic/Crisp/"
   name "Crisp"
   desc "Auto-remove pauses and filler words from screen recordings and videos"
   homepage "https://github.com/rafay99-epic/Crisp"
 
-  # `version :latest` always tracks the newest release; Crisp also self-updates.
+  # Pinned version + checksum so Homebrew verifies every download. `livecheck`
+  # lets `brew livecheck` / `brew bump-cask-pr` detect new releases; bump
+  # `version` + `sha256` here each Stable cut. (Crisp also self-updates once
+  # installed, so an installed copy stays current between cask bumps.)
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   # Apple Silicon only — the engine binaries (ffmpeg/whisper) ship as arm64.
   depends_on macos: :sonoma
   depends_on arch: :arm64
