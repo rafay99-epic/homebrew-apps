@@ -1,6 +1,6 @@
 cask "porter-nightly" do
-  version "3"
-  sha256 "d77a6a17ff1dfe0b81d5fcd2b077a45d06d945859cf7457e3d8be76735dfda45"
+  version "4"
+  sha256 "2e893570de9cd5390aef6b0fc1b60d01117827746d9705ba36b08310c339164d"
 
   url "https://github.com/rafay99-epic/porter/releases/download/nightly/Porter-Nightly.dmg",
       verified: "github.com/rafay99-epic/porter/"
