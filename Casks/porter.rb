@@ -12,9 +12,6 @@ cask "porter" do
   # lets `brew livecheck` / `brew bump-cask-pr` detect new releases; bump
   # `version` + `sha256` here each Stable cut. (Porter also self-updates once
   # installed, so an installed copy stays current between cask bumps.)
-  #
-  # NOTE: the porter repo is PRIVATE — `brew install` needs a GitHub token with
-  # repo read access (set HOMEBREW_GITHUB_API_TOKEN) to download the release asset.
   livecheck do
     url :url
     strategy :github_latest

@@ -15,9 +15,6 @@ cask "porter-nightly" do
   # Tracks the rolling `nightly` pre-release; Porter Nightly also self-updates
   # from it. Installs alongside the stable `porter` cask — separate app, icon,
   # settings, and data. Apple Silicon only.
-  #
-  # NOTE: the porter repo is PRIVATE — `brew install` needs a GitHub token with
-  # repo read access (set HOMEBREW_GITHUB_API_TOKEN) to download the release asset.
   depends_on macos: :sonoma
   depends_on arch: :arm64
 
