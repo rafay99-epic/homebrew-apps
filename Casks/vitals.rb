@@ -1,13 +1,22 @@
 cask "vitals" do
-  version :latest
-  sha256 :no_check
+  version "0.60"
+  sha256 "ccad4c36afd4eaddacf6abf303b09c92cd416cb743ab0a37d31a8925e5f37c80"
 
-  url "https://github.com/rafay99-epic/Vitals/releases/latest/download/Vitals.dmg"
+  url "https://github.com/rafay99-epic/Vitals/releases/download/v#{version}/Vitals.dmg",
+      verified: "github.com/rafay99-epic/Vitals/"
   name "Vitals"
   desc "Native macOS hardware monitor and app manager"
   homepage "https://github.com/rafay99-epic/Vitals"
 
-  # `version :latest` always tracks the newest release; Vitals also self-updates.
+  # Pinned version + checksum so Homebrew verifies every download. The release CI
+  # auto-bumps both on each Stable cut (Vitals's .github/scripts/bump-cask.sh), so
+  # nobody hand-edits a sha256. `livecheck` lets `brew livecheck` detect new
+  # releases; Vitals also self-updates once installed.
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   depends_on macos: :sequoia
 
   app "Vitals.app"
@@ -21,9 +30,9 @@ cask "vitals" do
   end
 
   zap trash: [
-    "~/Library/Preferences/com.syntaxlabtechnology.vitals.plist",
     "~/Library/Caches/com.syntaxlabtechnology.vitals",
     "~/Library/HTTPStorages/com.syntaxlabtechnology.vitals",
+    "~/Library/Preferences/com.syntaxlabtechnology.vitals.plist",
     "~/Library/Saved Application State/com.syntaxlabtechnology.vitals.savedState",
   ]
 end

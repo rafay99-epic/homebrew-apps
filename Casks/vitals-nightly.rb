@@ -1,15 +1,19 @@
 cask "vitals-nightly" do
-  version :latest
-  sha256 :no_check
+  version "9"
+  sha256 "b8eb5b2573fe43d29bd6441504e9c822ef3deaf34cff6716b6709e573911b255"
 
-  url "https://github.com/rafay99-epic/Vitals/releases/download/nightly/Vitals-Nightly.dmg"
+  url "https://github.com/rafay99-epic/Vitals/releases/download/nightly/Vitals-Nightly.dmg",
+      verified: "github.com/rafay99-epic/Vitals/"
   name "Vitals Nightly"
   desc "Nightly (pre-release) channel of the Vitals hardware monitor"
   homepage "https://github.com/rafay99-epic/Vitals"
 
-  # Tracks the rolling `nightly` pre-release; Vitals Nightly also self-updates
-  # from it. Installs alongside the stable `vitals` cask — separate app, icon,
-  # settings, and data.
+  # The `nightly` tag is a single rolling pre-release whose Vitals-Nightly.dmg is
+  # overwritten on every nightly build. The release CI re-pins version (= the
+  # monotonic build number) + sha256 right after each build (Vitals's
+  # .github/scripts/bump-cask.sh), so the checksum stays honest without anyone
+  # hand-editing it. Vitals Nightly also self-updates from this feed. Installs
+  # alongside the stable `vitals` cask — separate app, icon, settings, and data.
   depends_on macos: :sequoia
 
   app "Vitals Nightly.app"
@@ -22,9 +26,9 @@ cask "vitals-nightly" do
   end
 
   zap trash: [
-    "~/Library/Preferences/com.syntaxlabtechnology.vitals.nightly.plist",
     "~/Library/Caches/com.syntaxlabtechnology.vitals.nightly",
     "~/Library/HTTPStorages/com.syntaxlabtechnology.vitals.nightly",
+    "~/Library/Preferences/com.syntaxlabtechnology.vitals.nightly.plist",
     "~/Library/Saved Application State/com.syntaxlabtechnology.vitals.nightly.savedState",
   ]
 end
