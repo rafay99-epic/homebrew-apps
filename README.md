@@ -68,6 +68,40 @@ next to your stable copy and auto-updates from the pre-release feed.
 brew install --cask rafay99-epic/apps/crisp-nightly
 ```
 
+## Porter
+
+A native macOS menu-bar app that watches your **Downloads** folder and files
+each finished download into the matching folder on your **NAS** by type —
+[github.com/rafay99-epic/porter](https://github.com/rafay99-epic/porter).
+
+```sh
+brew install --cask rafay99-epic/apps/porter
+```
+
+Or tap first, then install:
+
+```sh
+brew tap rafay99-epic/apps
+brew install --cask porter
+```
+
+Porter updates itself after that. Apple Silicon only. To remove it:
+
+```sh
+brew uninstall --cask porter        # remove the app
+brew uninstall --zap --cask porter  # also remove its settings + logs (~/.porter)
+```
+
+### Porter Nightly (pre-release)
+
+The Nightly channel — every integration build before a stable release. Installs
+as a **separate** **Porter Nightly** app (own icon + settings + data) that sits
+next to your stable copy and auto-updates from the pre-release feed.
+
+```sh
+brew install --cask rafay99-epic/apps/porter-nightly
+```
+
 ## Note on the security prompt
 
 These apps are ad-hoc signed, not Apple-notarized (notarization needs a paid
