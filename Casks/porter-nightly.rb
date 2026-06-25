@@ -1,10 +1,6 @@
 cask "porter-nightly" do
-  # `:no_check` is intentional: the `nightly` tag is a single rolling pre-release
-  # whose Porter-Nightly.dmg is overwritten on every nightly build, so any pinned
-  # checksum would be stale within hours. The stable `porter` cask is
-  # version-pinned with a real sha256 — install that if you want verification.
-  version :latest
-  sha256 :no_check
+  version "4"
+  sha256 "2e893570de9cd5390aef6b0fc1b60d01117827746d9705ba36b08310c339164d"
 
   url "https://github.com/rafay99-epic/porter/releases/download/nightly/Porter-Nightly.dmg",
       verified: "github.com/rafay99-epic/porter/"
@@ -12,9 +8,13 @@ cask "porter-nightly" do
   desc "Nightly (pre-release) channel of Porter — files downloads onto your NAS"
   homepage "https://github.com/rafay99-epic/porter"
 
-  # Tracks the rolling `nightly` pre-release; Porter Nightly also self-updates
-  # from it. Installs alongside the stable `porter` cask — separate app, icon,
-  # settings, and data. Apple Silicon only.
+  # The `nightly` tag is a single rolling pre-release whose Porter-Nightly.dmg is
+  # overwritten on every nightly build. The release CI re-pins version (= the
+  # monotonic build number) + sha256 right after each build (Porter's
+  # .github/scripts/bump-cask.sh), so the checksum stays honest without anyone
+  # hand-editing it. Porter Nightly also self-updates from this feed. Installs
+  # alongside the stable `porter` cask — separate app, icon, settings, and data.
+  # Apple Silicon only.
   depends_on macos: :sonoma
   depends_on arch: :arm64
 

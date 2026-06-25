@@ -1,15 +1,20 @@
 cask "crisp-nightly" do
-  version :latest
-  sha256 :no_check
+  version "33"
+  sha256 "18d5be81e231a70b6320bafe7c506024beadc0ef333bdf05e8a1823258172ac6"
 
-  url "https://github.com/rafay99-epic/Crisp/releases/download/nightly/Crisp-Nightly.dmg"
+  url "https://github.com/rafay99-epic/Crisp/releases/download/nightly/Crisp-Nightly.dmg",
+      verified: "github.com/rafay99-epic/Crisp/"
   name "Crisp Nightly"
   desc "Nightly (pre-release) channel of Crisp — pause & filler-word remover"
   homepage "https://github.com/rafay99-epic/Crisp"
 
-  # Tracks the rolling `nightly` pre-release; Crisp Nightly also self-updates
-  # from it. Installs alongside the stable `crisp` cask — separate app, icon,
-  # settings, and data. Apple Silicon only.
+  # The `nightly` tag is a single rolling pre-release whose Crisp-Nightly.dmg is
+  # overwritten on every nightly build. The release CI re-pins version (= the
+  # monotonic build number) + sha256 right after each build (Crisp's
+  # .github/scripts/bump-cask.sh), so the checksum stays honest without anyone
+  # hand-editing it. Crisp Nightly also self-updates from this feed. Installs
+  # alongside the stable `crisp` cask — separate app, icon, settings, and data.
+  # Apple Silicon only.
   depends_on macos: :sonoma
   depends_on arch: :arm64
 
