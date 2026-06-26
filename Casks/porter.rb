@@ -1,6 +1,6 @@
 cask "porter" do
-  version "0.2"
-  sha256 "b2b55818b1f47c5ff9151bc830f5e689e595473f4c0f3d895d371424857630ff"
+  version "0.4"
+  sha256 "2cd835211ce482792c6260d1fabaf03998bb074e1f107bfffa6ed67350c494d5"
 
   url "https://github.com/rafay99-epic/porter/releases/download/v#{version}/Porter.dmg",
       verified: "github.com/rafay99-epic/porter/"
