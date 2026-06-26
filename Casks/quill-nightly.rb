@@ -1,6 +1,6 @@
 cask "quill-nightly" do
-  version "3"
-  sha256 "b1a5c25ce7e4f5b524f6d74d627eaba990cdf597df22cc885e0a4ca5c6ddb218"
+  version "5"
+  sha256 "cfdac929fd1ba2d43825da1b3b90b83e48c283e554fbe082c5972ea003bdbd2b"
 
   url "https://github.com/rafay99-epic/Quill/releases/download/nightly/Quill-Nightly.dmg",
       verified: "github.com/rafay99-epic/Quill/"
