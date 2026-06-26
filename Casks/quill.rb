@@ -1,6 +1,6 @@
 cask "quill" do
-  version "0.1499"
-  sha256 "c7568f12cee29b09731d4181e8619995cc8148608807322f372e214170c99934"
+  version "0.1500"
+  sha256 "ae57c9e144907f0f3925835bb96fdddd5325f2c6f7a55926895d48da24c42af6"
 
   url "https://github.com/rafay99-epic/Quill/releases/download/v#{version}/Quill.dmg",
       verified: "github.com/rafay99-epic/Quill/"
