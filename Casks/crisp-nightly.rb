@@ -1,6 +1,6 @@
 cask "crisp-nightly" do
-  version "79"
-  sha256 "97b32917f7dea2e34201530cdb32bb6e1576fd1f01c70f1dad1bcbbe78643f17"
+  version "81"
+  sha256 "e7122e4e9e886f52c3de9ec52f20e2b3db1a674c1bba1e814a6a943e45e0c517"
 
   url "https://github.com/rafay99-epic/Crisp/releases/download/nightly/Crisp-Nightly.dmg",
       verified: "github.com/rafay99-epic/Crisp/"
