@@ -1,6 +1,6 @@
 cask "vitals" do
-  version "0.66"
-  sha256 "0c3118d3c4fd10f24d21350be1fe0df74067907d3669fc0e3f8ff21257f87c31"
+  version "0.67"
+  sha256 "421fed236a77d19b110852d930549a0e7a7e6ea4e293d53f202fc1baf4093e7b"
 
   url "https://github.com/rafay99-epic/Vitals/releases/download/v#{version}/Vitals.dmg",
       verified: "github.com/rafay99-epic/Vitals/"
