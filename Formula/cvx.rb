@@ -1,7 +1,7 @@
 class Cvx < Formula
   desc "Per-project Convex account switching — no deploy keys, no tokens in repos"
   homepage "https://github.com/rafay99-epic/convex-switch"
-  version "0.6"
+  version "0.12"
   license "MIT"
 
   # Standalone binaries compiled with `bun build --compile` (bundle the Bun
@@ -10,28 +10,29 @@ class Cvx < Formula
   # hand-edit the version or sha256 lines.
   on_macos do
     on_arm do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.6/cvx-darwin-arm64.tar.gz"
-      sha256 "a8f7072ed91aafefb26ce2284d8707e1c2544ae9e0c0fe51d7ebe6b02592de03"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.12/cvx-darwin-arm64.tar.gz"
+      sha256 "ec404178266fbf175cdb9e57856a5d85b43584f3c0aca024bb0de7303fcac10e"
     end
     on_intel do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.6/cvx-darwin-x64.tar.gz"
-      sha256 "ca39705dbeed578420074a3c3e960bd4eb384a16cb76e963a6e08a24bd4bd76e"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.12/cvx-darwin-x64.tar.gz"
+      sha256 "146e460d03cfbc08739410dc2222997baa9d7f64bcca911670306b8283fe0251"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.6/cvx-linux-arm64.tar.gz"
-      sha256 "1d86320f6d67e761a6b80e5db439be41ea4d5001c4fc8c5e6d2f4caa433d781d"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.12/cvx-linux-arm64.tar.gz"
+      sha256 "3b14ddfe4bfc173a18f8c69ae478969c8d6fc5cb123cf02e65fb5d5fff9c59d9"
     end
     on_intel do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.6/cvx-linux-x64.tar.gz"
-      sha256 "65087dc4f49537ec7f6316f17f55bc52acf53ec6e7802d6d1133276faeec20cb"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.12/cvx-linux-x64.tar.gz"
+      sha256 "025c7db8aeb8e6df66a219257485a167f9181e926a841fb4f4e99799e5285f60"
     end
   end
 
   def install
     bin.install "cvx"
+    man1.install "cvx.1"
   end
 
   def caveats
