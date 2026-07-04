@@ -1,6 +1,6 @@
 # homebrew-apps
 
-Homebrew tap for [Syntax Lab Technology](https://rafay99.com) macOS apps.
+Homebrew tap for [Syntax Lab Technology](https://rafay99.com) macOS apps and command-line tools.
 
 ## Vitals
 
@@ -100,6 +100,38 @@ next to your stable copy and auto-updates from the pre-release feed.
 
 ```sh
 brew install --cask rafay99-epic/apps/porter-nightly
+```
+
+## cvx (convex-switch)
+
+A CLI that binds Convex accounts to project folders and auto-activates the right
+one when you `cd` in — run several Convex accounts across projects at once with
+no login/logout churn, no deploy keys, and no tokens in your repos.
+[github.com/rafay99-epic/convex-switch](https://github.com/rafay99-epic/convex-switch).
+Unlike the apps above this is a command-line **formula** (macOS + Linux):
+
+```sh
+brew install rafay99-epic/apps/cvx
+```
+
+Or tap first, then install:
+
+```sh
+brew tap rafay99-epic/apps
+brew install cvx
+```
+
+Then enable per-project switching once:
+
+```sh
+cvx hook --install   # adds a cd-hook to ~/.zshrc
+exec zsh
+```
+
+To remove it:
+
+```sh
+brew uninstall cvx
 ```
 
 ## Note on the security prompt
