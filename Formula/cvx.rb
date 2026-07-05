@@ -1,7 +1,7 @@
 class Cvx < Formula
   desc "Per-project Convex account switching — no deploy keys, no tokens in repos"
   homepage "https://github.com/rafay99-epic/convex-switch"
-  version "0.33"
+  version "0.35"
   license "MIT"
 
   # Standalone binaries compiled with `bun build --compile` (bundle the Bun
@@ -10,23 +10,23 @@ class Cvx < Formula
   # hand-edit the version or sha256 lines.
   on_macos do
     on_arm do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.33/cvx-darwin-arm64.tar.gz"
-      sha256 "41ff66de24391827d0b72de6a5f9ae9bc1d0b383436e05e0cdae14fbee5e8074"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.35/cvx-darwin-arm64.tar.gz"
+      sha256 "c5e438bd0b5e9a9fbf4f8c85cb38778660572b95fea6b4ef1d2c67fe4ef14c8f"
     end
     on_intel do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.33/cvx-darwin-x64.tar.gz"
-      sha256 "cc81294f9474b30204d609692c724193254cdb7d2546bcd4b0cec60a29e48394"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.35/cvx-darwin-x64.tar.gz"
+      sha256 "ea098b12462f298a41a340802a9caedb5980d94dfb76d8254937a85d70b9fb37"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.33/cvx-linux-arm64.tar.gz"
-      sha256 "1179af0a515bd489fa42f7e04ea8ad500a4c7e496f98af31288ea5ab88de9679"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.35/cvx-linux-arm64.tar.gz"
+      sha256 "e508841354b1b220da3b45c069e3c2049707829a1c1287dc59c419a9a3208f00"
     end
     on_intel do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.33/cvx-linux-x64.tar.gz"
-      sha256 "d0145397d17bac4d405fa2480edd5d995c3249ef2b703a2e1f684e1852353ca7"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.35/cvx-linux-x64.tar.gz"
+      sha256 "0bd7d4a6704648fd7c37985b1f710ee736d5409906adae51f911a08bf573a45d"
     end
   end
 
