@@ -1,6 +1,6 @@
 cask "vitals-nightly" do
-  version "28"
-  sha256 "115c505958d7f5564aa2b400a657435ce7fab62af1d6cda5559c1c95910d5690"
+  version "31"
+  sha256 "22252d4296e71c90f30d3a396ca3d40ccaf3219cf803ce90f9b14ebcd48ce09a"
 
   url "https://github.com/rafay99-epic/Vitals/releases/download/nightly/Vitals-Nightly.dmg",
       verified: "github.com/rafay99-epic/Vitals/"
