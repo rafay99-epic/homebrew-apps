@@ -1,9 +1,9 @@
 class Envpilot < Formula
   desc "Envpilot CLI \u2014 sync and manage environment variables from the terminal"
   homepage "https://www.envpilot.dev"
-  url "https://registry.npmjs.org/@envpilot/cli/-/cli-1.15.1.tgz"
-  version "1.15.1"
-  sha256 "9c9d13d6f998bfdf51a0651a66cf3089ae4af2d6ee4311d4b67b53b5036ece13"
+  url "https://registry.npmjs.org/@envpilot/cli/-/cli-1.16.0.tgz"
+  version "1.16.0"
+  sha256 "8cfab20453782fa831c8d7a7ce531cb8484fbb2148cc38023396b712f0fa84a5"
   license "UNLICENSED"
 
   depends_on "node"
