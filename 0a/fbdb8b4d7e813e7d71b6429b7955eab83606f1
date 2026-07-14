@@ -1,0 +1,19 @@
+Casks/wryte.rb
+  s_5651bd423f8c1a::t_c0b71211dd3464 1-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "0afbdb8b4d7e813e7d71b6429b7955eab83606f1",
+  "prompts": {},
+  "sessions": {
+    "s_5651bd423f8c1a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c2b74d80-e4d8-4b2b-9589-6a26ef015026",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Abdul Rafay <99marafay@gmail.com>"
+    }
+  }
+}
