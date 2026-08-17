@@ -1,6 +1,6 @@
 cask "coppice" do
-  version "0.1"
-  sha256 "a5bcbbd8e5062bf28f3aa558d2c75b8cb0a716ba7be88eb4a42bc8f017c44e7d"
+  version "0.2"
+  sha256 "365b8eb65c372af54de09308c7f435f2c6b650b7044f5b0d8a47bf57f5b91907"
 
   url "https://github.com/rafay99-epic/Coppice/releases/download/v#{version}/Coppice.dmg",
       verified: "github.com/rafay99-epic/Coppice/"
