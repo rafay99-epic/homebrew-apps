@@ -1,7 +1,7 @@
 class Fvx < Formula
   desc "Per-project Flutter SDK switching. Run flutter in any folder, get the version that folder pins"
   homepage "https://github.com/rafay99-epic/fvx"
-  version "0.1"
+  version "0.2"
   license "MIT"
 
   # Standalone binaries compiled with `bun build --compile` (bundle the Bun
@@ -10,23 +10,23 @@ class Fvx < Formula
   # hand-edit the version or sha256 lines.
   on_macos do
     on_arm do
-      url "https://github.com/rafay99-epic/fvx/releases/download/v0.1/fvx-darwin-arm64.tar.gz"
-      sha256 "54e898ef9295e8c571f9b7ff07ef4083af1088ad15973eb47a022413cf9bd744"
+      url "https://github.com/rafay99-epic/fvx/releases/download/v0.2/fvx-darwin-arm64.tar.gz"
+      sha256 "eacdc702539597d75d91e92a41078ec15faa043fdcafdf859d1a650f9c0d1a1c"
     end
     on_intel do
-      url "https://github.com/rafay99-epic/fvx/releases/download/v0.1/fvx-darwin-x64.tar.gz"
-      sha256 "1ebca15640d5ff7870d129048ffdde47d29fb2bed0fb5bc81f21a28479726de5"
+      url "https://github.com/rafay99-epic/fvx/releases/download/v0.2/fvx-darwin-x64.tar.gz"
+      sha256 "518de208e10f711c487f5246c8dd412e9ae384b9e0d1500944ff2d4af605b798"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/rafay99-epic/fvx/releases/download/v0.1/fvx-linux-arm64.tar.gz"
-      sha256 "188156ee31b0aa9b07f2a1d5c8d5c9831571b88c5e8297996fc0f8b6fd08d75a"
+      url "https://github.com/rafay99-epic/fvx/releases/download/v0.2/fvx-linux-arm64.tar.gz"
+      sha256 "99e4faa323cb106a1ab406a0d57685eb465e41c8875f94c30493d1d6f2c0b115"
     end
     on_intel do
-      url "https://github.com/rafay99-epic/fvx/releases/download/v0.1/fvx-linux-x64.tar.gz"
-      sha256 "31d0d10bce3ce3a87add08b9779fbd83c9fb0ef79d645bc51cccf88efb7b7c96"
+      url "https://github.com/rafay99-epic/fvx/releases/download/v0.2/fvx-linux-x64.tar.gz"
+      sha256 "810582247f235b21689eb85c947f70a2c5e21eb94b80af128c513d447e82ed7a"
     end
   end
 
