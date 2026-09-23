@@ -2,12 +2,12 @@ cask "quill-nightly" do
   version "6"
   sha256 "832abce7ce08eb5cd34c9bfaee370b4f2b89534ab8f4f4cc0384ab24fbbe66a1"
 
-  url "https://github.com/rafay99-epic/Quill/releases/download/nightly/Quill-Nightly.dmg",
-      verified: "github.com/rafay99-epic/Quill/"
+  url "https://github.com/rafay99-epic/Quill/releases/download/nightly/Quill-Nightly.dmg"
   name "Quill Nightly"
-  desc "Nightly (pre-release) channel of Quill — local dictation app for macOS"
+  desc "Nightly (pre-release) channel of the Quill local dictation app"
   homepage "https://github.com/rafay99-epic/Quill"
 
+  depends_on arch: :arm64
   # The `nightly` tag is a single rolling pre-release whose Quill-Nightly.dmg is
   # overwritten on every nightly build. The release CI re-pins version (= the
   # monotonic build number) + sha256 right after each build
@@ -16,15 +16,13 @@ cask "quill-nightly" do
   # alongside the stable `quill` cask — separate app, icon, settings, and data.
   # Apple Silicon only.
   depends_on macos: :sonoma
-  depends_on arch: :arm64
 
   app "Quill Nightly.app"
 
   # Ad-hoc signed, not notarized. Strip the download quarantine so Gatekeeper
   # doesn't block first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Quill Nightly.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Quill Nightly.app"]
   end
 
   zap trash: [

@@ -2,8 +2,7 @@ cask "porter" do
   version "0.4"
   sha256 "2cd835211ce482792c6260d1fabaf03998bb074e1f107bfffa6ed67350c494d5"
 
-  url "https://github.com/rafay99-epic/porter/releases/download/v#{version}/Porter.dmg",
-      verified: "github.com/rafay99-epic/porter/"
+  url "https://github.com/rafay99-epic/porter/releases/download/v#{version}/Porter.dmg"
   name "Porter"
   desc "Watches a folder and files finished downloads onto your NAS by type"
   homepage "https://github.com/rafay99-epic/porter"
@@ -17,17 +16,16 @@ cask "porter" do
     strategy :github_latest
   end
 
+  depends_on arch: :arm64
   # Apple Silicon only — build.sh compiles a single arm64 slice.
   depends_on macos: :sonoma
-  depends_on arch: :arm64
 
   app "Porter.app"
 
   # The build is ad-hoc signed, not Apple-notarized. Strip the download
   # quarantine after install so Gatekeeper doesn't block first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Porter.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Porter.app"]
   end
 
   # `~/.porter` holds Porter's per-channel config + logs.

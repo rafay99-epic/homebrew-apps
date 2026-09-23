@@ -2,12 +2,12 @@ cask "crisp-nightly" do
   version "90"
   sha256 "7ce02d768d46be626a5812646a9f7c15ef7be1aed20b99c2a72e0cecd4899218"
 
-  url "https://github.com/rafay99-epic/Crisp/releases/download/nightly/Crisp-Nightly.dmg",
-      verified: "github.com/rafay99-epic/Crisp/"
+  url "https://github.com/rafay99-epic/Crisp/releases/download/nightly/Crisp-Nightly.dmg"
   name "Crisp Nightly"
-  desc "Nightly (pre-release) channel of Crisp — pause & filler-word remover"
+  desc "Nightly (pre-release) channel of the Crisp pause and filler-word remover"
   homepage "https://github.com/rafay99-epic/Crisp"
 
+  depends_on arch: :arm64
   # The `nightly` tag is a single rolling pre-release whose Crisp-Nightly.dmg is
   # overwritten on every nightly build. The release CI re-pins version (= the
   # monotonic build number) + sha256 right after each build (Crisp's
@@ -16,15 +16,13 @@ cask "crisp-nightly" do
   # alongside the stable `crisp` cask — separate app, icon, settings, and data.
   # Apple Silicon only.
   depends_on macos: :sonoma
-  depends_on arch: :arm64
 
   app "Crisp Nightly.app"
 
   # Ad-hoc signed, not notarized. Strip the download quarantine so Gatekeeper
   # doesn't block first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Crisp Nightly.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Crisp Nightly.app"]
   end
 
   # `~/.crisp-nightly` holds the speech model this channel downloads on first run.

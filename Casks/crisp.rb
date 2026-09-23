@@ -2,8 +2,7 @@ cask "crisp" do
   version "0.18"
   sha256 "acc9792df03232c1e74dc640542b52f6eb3876819556df85b97f01a0a0110cd7"
 
-  url "https://github.com/rafay99-epic/Crisp/releases/download/v#{version}/Crisp.dmg",
-      verified: "github.com/rafay99-epic/Crisp/"
+  url "https://github.com/rafay99-epic/Crisp/releases/download/v#{version}/Crisp.dmg"
   name "Crisp"
   desc "Auto-remove pauses and filler words from screen recordings and videos"
   homepage "https://github.com/rafay99-epic/Crisp"
@@ -17,18 +16,17 @@ cask "crisp" do
     strategy :github_latest
   end
 
+  depends_on arch: :arm64
   # Apple Silicon only — the engine binaries (ffmpeg/whisper) ship as arm64.
   depends_on macos: :sonoma
-  depends_on arch: :arm64
 
   app "Crisp.app"
 
   # The build is ad-hoc signed, not Apple-notarized. Strip the download
   # quarantine after install so Gatekeeper doesn't block first launch — this is
   # what lets `brew install --cask` open cleanly without notarization.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Crisp.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Crisp.app"]
   end
 
   # `~/.crisp` holds the speech model Crisp downloads on first run (~148 MB).

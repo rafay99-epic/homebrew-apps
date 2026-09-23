@@ -2,10 +2,9 @@ cask "vitals" do
   version "0.72"
   sha256 "0d015348927812d098a5638ad62b720855eee89570a5bf3a2a24342d5d6c43b1"
 
-  url "https://github.com/rafay99-epic/Vitals/releases/download/v#{version}/Vitals.dmg",
-      verified: "github.com/rafay99-epic/Vitals/"
+  url "https://github.com/rafay99-epic/Vitals/releases/download/v#{version}/Vitals.dmg"
   name "Vitals"
-  desc "Native macOS hardware monitor and app manager"
+  desc "Native hardware monitor and app manager"
   homepage "https://github.com/rafay99-epic/Vitals"
 
   # Pinned version + checksum so Homebrew verifies every download. The release CI
@@ -24,9 +23,8 @@ cask "vitals" do
   # The build is ad-hoc signed, not Apple-notarized. Strip the download
   # quarantine after install so Gatekeeper doesn't block first launch — this is
   # what lets `brew install --cask` open cleanly without notarization.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Vitals.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Vitals.app"]
   end
 
   zap trash: [
