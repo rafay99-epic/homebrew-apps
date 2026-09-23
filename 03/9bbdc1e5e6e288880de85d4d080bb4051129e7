@@ -1,0 +1,41 @@
+Casks/coppice-nightly.rb
+  s_3e3dfec32bf217::t_c2d51c45e9a490 5,25-26
+Casks/coppice.rb
+  s_3e3dfec32bf217::t_714c864c6f86cc 5,26-27
+Casks/crisp-nightly.rb
+  s_3e3dfec32bf217::t_67bca781e0eaa5 5,24-25
+Casks/crisp.rb
+  s_3e3dfec32bf217::t_b7936b319abb10 5,28-29
+Casks/porter-nightly.rb
+  s_3e3dfec32bf217::t_ef9e3f9902e377 5,24-25
+Casks/porter.rb
+  s_3e3dfec32bf217::t_7a84b68310f077 5,27-28
+Casks/quill-nightly.rb
+  s_3e3dfec32bf217::t_7df9c12e143d56 5,24-25
+Casks/quill.rb
+  s_3e3dfec32bf217::t_fc05557923672e 5,27-28
+Casks/vitals-dev.rb
+  s_3e3dfec32bf217::t_de379c0de1c477 33-34
+Casks/vitals-nightly.rb
+  s_3e3dfec32bf217::t_9c40857864d5a4 5,22-23
+Casks/vitals.rb
+  s_3e3dfec32bf217::t_4d6e3abfe76c36 5,26-27
+Casks/wryte.rb
+  s_3e3dfec32bf217::t_6ddcad82e5217c 5,27-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "039bbdc1e5e6e288880de85d4d080bb4051129e7",
+  "prompts": {},
+  "sessions": {
+    "s_3e3dfec32bf217": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fc78b36b-49ba-4f4d-b965-573ed26d3610",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Abdul Rafay <99marafay@gmail.com>"
+    }
+  }
+}
