@@ -2,8 +2,7 @@ cask "coppice-nightly" do
   version "8"
   sha256 "371cc791e7e8800c6e7b5aa0d234e9cc029582c918ae66fe9df724f5c99fd914"
 
-  url "https://github.com/rafay99-epic/Coppice/releases/download/nightly/Coppice-Nightly.dmg",
-      verified: "github.com/rafay99-epic/Coppice/"
+  url "https://github.com/rafay99-epic/Coppice/releases/download/nightly/Coppice-Nightly.dmg"
   name "Coppice Nightly"
   desc "Nightly (pre-release) channel of the Coppice worktree cleaner"
   homepage "https://github.com/rafay99-epic/Coppice"
@@ -23,9 +22,8 @@ cask "coppice-nightly" do
 
   # Ad-hoc signed, not notarized. Strip the download quarantine so Gatekeeper
   # doesn't block first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Coppice Nightly.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Coppice Nightly.app"]
   end
 
   # Menu bar app with no Dock icon, so quit by bundle id rather than by name.

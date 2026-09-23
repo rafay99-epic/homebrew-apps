@@ -2,11 +2,10 @@ cask "wryte" do
   version "1.6.91"
   sha256 "72136fc5f073def7b10f54664f5024dcf9369b1a20c2825ebdf76ef881bd7a04"
 
-  url "https://github.com/rafay99-epic/wryte.xyz/releases/download/v#{version}/Wryte.dmg",
-      verified: "github.com/rafay99-epic/wryte.xyz/"
+  url "https://github.com/rafay99-epic/wryte.xyz/releases/download/v#{version}/Wryte.dmg"
   name "Wryte"
-  desc "Git-native content workspace — markdown editor that publishes to GitHub"
-  homepage "https://wryte.xyz"
+  desc "Git-native markdown editor that publishes to GitHub"
+  homepage "https://wryte.xyz/"
 
   # Pinned version + checksum so Homebrew verifies every download. The release CI
   # auto-bumps both on each tag (wryte.xyz's .github/scripts/bump-cask.sh), so
@@ -19,15 +18,15 @@ cask "wryte" do
 
   # Apple Silicon — the macOS build ships as an arm64 dmg.
   depends_on arch: :arm64
+  depends_on :macos
 
   app "Wryte.app"
 
   # The build is ad-hoc signed, not Apple-notarized. Strip the download
   # quarantine after install so Gatekeeper doesn't block first launch — this is
   # what lets `brew install --cask` open cleanly without notarization.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Wryte.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Wryte.app"]
   end
 
   zap trash: [

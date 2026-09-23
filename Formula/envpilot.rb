@@ -1,5 +1,5 @@
 class Envpilot < Formula
-  desc "Envpilot CLI \u2014 sync and manage environment variables from the terminal"
+  desc "Sync and manage environment variables from the terminal"
   homepage "https://www.envpilot.dev"
   url "https://registry.npmjs.org/@envpilot/cli/-/cli-1.23.1.tgz"
   version "1.23.1"

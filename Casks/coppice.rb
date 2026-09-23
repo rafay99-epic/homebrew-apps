@@ -2,8 +2,7 @@ cask "coppice" do
   version "0.9"
   sha256 "aad17c5847ad5deec9b74847ca7fc103f50fc8db28d7524e3d84f22d9f5d8dff"
 
-  url "https://github.com/rafay99-epic/Coppice/releases/download/v#{version}/Coppice.dmg",
-      verified: "github.com/rafay99-epic/Coppice/"
+  url "https://github.com/rafay99-epic/Coppice/releases/download/v#{version}/Coppice.dmg"
   name "Coppice"
   desc "Safely reclaims disk from git worktrees left behind by coding agents"
   homepage "https://github.com/rafay99-epic/Coppice"
@@ -24,9 +23,8 @@ cask "coppice" do
   # The build is ad-hoc signed, not Apple-notarized. Strip the download
   # quarantine after install so Gatekeeper doesn't block first launch — this is
   # what lets `brew install --cask` open cleanly without notarization.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Coppice.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Coppice.app"]
   end
 
   # Coppice is a menu bar app with no Dock icon, so quit it through the bundle id

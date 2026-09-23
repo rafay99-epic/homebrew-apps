@@ -2,8 +2,7 @@ cask "vitals-nightly" do
   version "36"
   sha256 "aed6c8601cb9f9a73616e73e23d985e1ba671fa12cb9332e58761d835a8f2a71"
 
-  url "https://github.com/rafay99-epic/Vitals/releases/download/nightly/Vitals-Nightly.dmg",
-      verified: "github.com/rafay99-epic/Vitals/"
+  url "https://github.com/rafay99-epic/Vitals/releases/download/nightly/Vitals-Nightly.dmg"
   name "Vitals Nightly"
   desc "Nightly (pre-release) channel of the Vitals hardware monitor"
   homepage "https://github.com/rafay99-epic/Vitals"
@@ -20,9 +19,8 @@ cask "vitals-nightly" do
 
   # Ad-hoc signed, not notarized. Strip the download quarantine so Gatekeeper
   # doesn't block first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Vitals Nightly.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Vitals Nightly.app"]
   end
 
   zap trash: [
