@@ -1,7 +1,7 @@
 class Cvx < Formula
-  desc "Per-project Convex account switching — no deploy keys, no tokens in repos"
+  desc "Per-project Convex account switching without deploy keys or tokens in repos"
   homepage "https://github.com/rafay99-epic/convex-switch"
-  version "0.59"
+  version "0.61"
   license "MIT"
 
   # Standalone binaries compiled with `bun build --compile` (bundle the Bun
@@ -10,23 +10,23 @@ class Cvx < Formula
   # hand-edit the version or sha256 lines.
   on_macos do
     on_arm do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.59/cvx-darwin-arm64.tar.gz"
-      sha256 "bae6b58d6a0ee891fdfbb768e68037ce786cbb692a3087f10d2e2ac5d1eeb8ff"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.61/cvx-darwin-arm64.tar.gz"
+      sha256 "89e63b7645f6cbf007b7931a02377322b071eeca18b4805483017bf0c58e5eac"
     end
     on_intel do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.59/cvx-darwin-x64.tar.gz"
-      sha256 "dd0903f080a443489b5993bbd3a8f192e9c68d664bcbb757678d2a98ef7e2b00"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.61/cvx-darwin-x64.tar.gz"
+      sha256 "4efda1a4f21631daba78ce05f5351c225fd9644180c5f680de46766e752b317f"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.59/cvx-linux-arm64.tar.gz"
-      sha256 "46caa09bf1bb2a90cc46963c8c7da715921f1af901b7756f083a4d1bdec3f207"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.61/cvx-linux-arm64.tar.gz"
+      sha256 "224571aa8a02ec5495fe953d404772a89673da0e531ead12548e8ad07de18c45"
     end
     on_intel do
-      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.59/cvx-linux-x64.tar.gz"
-      sha256 "5f10f9ef41ddd7170bb1dd977aa0ebe8664981136cf4082ce320828f4003b82b"
+      url "https://github.com/rafay99-epic/convex-switch/releases/download/v0.61/cvx-linux-x64.tar.gz"
+      sha256 "bd967c0dfb4a8679ca627c87d79f1d2f94be151f449839f038e6d47c81c37c8f"
     end
   end
 
@@ -35,7 +35,7 @@ class Cvx < Formula
     man1.install "cvx.1"
     # Tab completion out of the box: runs `cvx completions <shell>` at
     # install time and places each script where the shell expects it.
-    generate_completions_from_executable(bin/"cvx", "completions", shells: [:zsh, :bash, :fish])
+    generate_completions_from_executable(bin/"cvx", "completions")
   end
 
   def caveats
