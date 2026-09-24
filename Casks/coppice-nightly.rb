@@ -1,6 +1,6 @@
 cask "coppice-nightly" do
-  version "12"
-  sha256 "21bd45fe2cff0d68d2c3589b1bb8e058e75d1b9cc6335e752d6f1823005a7beb"
+  version "13"
+  sha256 "45b46a3856a1d74ee306109a8fe0bb3b13027a113da101e97e704020bd4647ab"
 
   url "https://github.com/rafay99-epic/Coppice/releases/download/nightly/Coppice-Nightly.dmg"
   name "Coppice Nightly"
