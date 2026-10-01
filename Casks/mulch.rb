@@ -28,7 +28,7 @@ cask "mulch" do
   zap trash: [
     "~/.config/mulch",
     "~/Library/Application Support/Mulch",
-    "~/Library/Logs/Mulch",
+    "~/.mulch",
     "~/Library/Preferences/com.rafay99.mulch.plist",
   ]
 end
