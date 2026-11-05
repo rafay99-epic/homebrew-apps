@@ -1,6 +1,6 @@
 cask "vitals-nightly" do
-  version "61"
-  sha256 "e6aa6ae43089023174a4a53df22dada82cb1505cb812b206b42bdf05893c0194"
+  version "62"
+  sha256 "8310fa7d827fb97534ead921e9d5a33718b983abbdb5be786f2338736c20af02"
 
   url "https://github.com/rafay99-epic/Vitals/releases/download/nightly/Vitals-Nightly.dmg"
   name "Vitals Nightly"
@@ -16,12 +16,6 @@ cask "vitals-nightly" do
   depends_on macos: :sequoia
 
   app "Vitals Nightly.app"
-
-  # Ad-hoc signed, not notarized. Strip the download quarantine so Gatekeeper
-  # doesn't block first launch.
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Vitals Nightly.app"]
-  end
 
   zap trash: [
     "~/Library/Caches/com.syntaxlabtechnology.vitals.nightly",
