@@ -1,6 +1,6 @@
 cask "vitals" do
-  version "0.77"
-  sha256 "91229b70ad070a33f27904251f81b9cd4237a603597bb4e63a1c26e85ae172fa"
+  version "0.80"
+  sha256 "6b82083e364e7cb03b8b08a4f68e555f92b4d632597ef05dc4bb23c2cbf6bb80"
 
   url "https://github.com/rafay99-epic/Vitals/releases/download/v#{version}/Vitals.dmg"
   name "Vitals"
@@ -19,13 +19,6 @@ cask "vitals" do
   depends_on macos: :sequoia
 
   app "Vitals.app"
-
-  # The build is ad-hoc signed, not Apple-notarized. Strip the download
-  # quarantine after install so Gatekeeper doesn't block first launch — this is
-  # what lets `brew install --cask` open cleanly without notarization.
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Vitals.app"]
-  end
 
   zap trash: [
     "~/Library/Caches/com.syntaxlabtechnology.vitals",
