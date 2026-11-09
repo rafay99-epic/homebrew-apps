@@ -1,6 +1,6 @@
 cask "crisp-nightly" do
-  version "90"
-  sha256 "7ce02d768d46be626a5812646a9f7c15ef7be1aed20b99c2a72e0cecd4899218"
+  version "95"
+  sha256 "6eb38c77f7381e8e9f8552cd20f344c13b7e5fd77e954c14397f2412c81936a4"
 
   url "https://github.com/rafay99-epic/Crisp/releases/download/nightly/Crisp-Nightly.dmg"
   name "Crisp Nightly"
@@ -18,12 +18,6 @@ cask "crisp-nightly" do
   depends_on macos: :sonoma
 
   app "Crisp Nightly.app"
-
-  # Ad-hoc signed, not notarized. Strip the download quarantine so Gatekeeper
-  # doesn't block first launch.
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Crisp Nightly.app"]
-  end
 
   # `~/.crisp-nightly` holds the speech model this channel downloads on first run.
   zap trash: [
