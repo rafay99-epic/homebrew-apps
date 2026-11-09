@@ -1,6 +1,6 @@
 cask "porter" do
-  version "0.4"
-  sha256 "2cd835211ce482792c6260d1fabaf03998bb074e1f107bfffa6ed67350c494d5"
+  version "0.6"
+  sha256 "985cd30e418e17d79ce3236d3ca0193fd10d757e4fbe10bb19d760cf62475577"
 
   url "https://github.com/rafay99-epic/porter/releases/download/v#{version}/Porter.dmg"
   name "Porter"
@@ -21,12 +21,6 @@ cask "porter" do
   depends_on macos: :sonoma
 
   app "Porter.app"
-
-  # The build is ad-hoc signed, not Apple-notarized. Strip the download
-  # quarantine after install so Gatekeeper doesn't block first launch.
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Porter.app"]
-  end
 
   # `~/.porter` holds Porter's per-channel config + logs.
   zap trash: [
