@@ -15,13 +15,6 @@ cask "mulch" do
 
   app "Mulch.app"
 
-  # Signed with a self-signed identity, not notarized. Strip the download
-  # quarantine so Gatekeeper doesn't block first launch.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Mulch.app"]
-  end
-
   # Menu bar app with no Dock icon, so quit by bundle id.
   uninstall quit: "com.rafay99.mulch"
 
