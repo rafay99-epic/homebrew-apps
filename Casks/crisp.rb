@@ -1,6 +1,6 @@
 cask "crisp" do
-  version "0.18"
-  sha256 "acc9792df03232c1e74dc640542b52f6eb3876819556df85b97f01a0a0110cd7"
+  version "0.20"
+  sha256 "7fe74ead74144e4f69dd11b98ee2bc5fb7ec67c52cb02b4cbb5f1136053b9ed0"
 
   url "https://github.com/rafay99-epic/Crisp/releases/download/v#{version}/Crisp.dmg"
   name "Crisp"
@@ -21,13 +21,6 @@ cask "crisp" do
   depends_on macos: :sonoma
 
   app "Crisp.app"
-
-  # The build is ad-hoc signed, not Apple-notarized. Strip the download
-  # quarantine after install so Gatekeeper doesn't block first launch — this is
-  # what lets `brew install --cask` open cleanly without notarization.
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Crisp.app"]
-  end
 
   # `~/.crisp` holds the speech model Crisp downloads on first run (~148 MB).
   zap trash: [
