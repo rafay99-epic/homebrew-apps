@@ -1,6 +1,6 @@
 cask "coppice-nightly" do
-  version "13"
-  sha256 "45b46a3856a1d74ee306109a8fe0bb3b13027a113da101e97e704020bd4647ab"
+  version "14"
+  sha256 "3f440112ada61f09616c1ba540f5df61e94d832de09974c8f8040c6ed2db53f3"
 
   url "https://github.com/rafay99-epic/Coppice/releases/download/nightly/Coppice-Nightly.dmg"
   name "Coppice Nightly"
@@ -19,12 +19,6 @@ cask "coppice-nightly" do
   depends_on macos: :sequoia
 
   app "Coppice Nightly.app"
-
-  # Ad-hoc signed, not notarized. Strip the download quarantine so Gatekeeper
-  # doesn't block first launch.
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Coppice Nightly.app"]
-  end
 
   # Menu bar app with no Dock icon, so quit by bundle id rather than by name.
   uninstall quit: "com.syntaxlabtechnology.coppice.nightly"
