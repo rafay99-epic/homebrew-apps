@@ -1,6 +1,6 @@
 cask "porter-nightly" do
-  version "5"
-  sha256 "5e707122915c2a9e8ae1ee64a6da9e3e2ddc54297455a2252feae07b8028ad5a"
+  version "6"
+  sha256 "f6e5a3c0b502c380cb5588874aa2b31f698441614ce318bd96acdfca3e5470b3"
 
   url "https://github.com/rafay99-epic/porter/releases/download/nightly/Porter-Nightly.dmg"
   name "Porter Nightly"
@@ -18,12 +18,6 @@ cask "porter-nightly" do
   depends_on macos: :sonoma
 
   app "Porter Nightly.app"
-
-  # Ad-hoc signed, not notarized. Strip the download quarantine so Gatekeeper
-  # doesn't block first launch.
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Porter Nightly.app"]
-  end
 
   # `~/.porter-nightly` holds this channel's config + logs.
   zap trash: [
