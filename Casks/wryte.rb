@@ -1,6 +1,6 @@
 cask "wryte" do
-  version "1.8.126"
-  sha256 "8a01fc9ba1542e8ef32638c56ec19ecf6bce0cbb2ecbc9cedee9c643b378d73c"
+  version "1.9.128"
+  sha256 "4476fa396784f3668e1a255621fa40d34bee4e49fdcb4d817fff7c17fd24a7db"
 
   url "https://github.com/rafay99-epic/wryte.xyz/releases/download/v#{version}/Wryte.dmg"
   name "Wryte"
